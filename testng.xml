@@ -3,10 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/Praktikant/IdeaProjects/Beispiel_2">
         <classes>
-            <class name="daks.tests.LoginTest">
-                <methods>
-                    <include name="loginTest"/>
-                </methods>
+            <class name="daks.tests.teilnehmer.TeilnehmerNameTest">
             </class>
         </classes>
     </test>
