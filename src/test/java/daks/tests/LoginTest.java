@@ -9,6 +9,6 @@ public class LoginTest {
     @Test
     public void loginTest(){
 
-        ReusableMethods.getLogin();
+        System.out.println("login Test");
     }
 }
