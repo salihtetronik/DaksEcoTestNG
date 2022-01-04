@@ -16,11 +16,17 @@ public class TeilnehmerPage {
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[10]")
     public WebElement teilnehmerButton;
 
-    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[3]")
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[4]")
     public WebElement richtungstaste;
 
+    @FindBy(xpath = "(//table)[3]//tr")
+    public WebElement tabelleRow;
+
+    @FindBy(xpath = "(//table)[3]//tr[1]/td[2]")
+    public WebElement tabelleRufnummer1;
+
     @FindBy(xpath = "(//table)[3]//tr[197]/td[2]")
-    public WebElement tableRufnummer197;
+    public WebElement tabelleRufnummer197;
 
     @FindBy(xpath = "(//table)[3]//tr[198]/td[2]")
     public WebElement tableRufnummer198;

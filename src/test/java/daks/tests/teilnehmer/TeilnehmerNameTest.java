@@ -14,10 +14,11 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(3);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tableRufnummer197);
+       // ReusableMethods.waitForPageToLoad(3);
+        //ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("OM!-AXI$/Targät 5940_Ü'ÖÄ*öü#H");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
@@ -31,8 +32,8 @@ public class TeilnehmerNameTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tableRufnummer197);
+        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM123456");
         String value = teilnehmer.nameOrt.getAttribute("value");
@@ -49,8 +50,8 @@ public class TeilnehmerNameTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tableRufnummer197);
+        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("S");
         String value = teilnehmer.nameOrt.getAttribute("value");
@@ -66,8 +67,8 @@ public class TeilnehmerNameTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tableRufnummer197);
+        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("");
         String value = teilnehmer.nameOrt.getAttribute("value");
