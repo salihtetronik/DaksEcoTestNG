@@ -14,13 +14,19 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-       // ReusableMethods.waitForPageToLoad(3);
-        //ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tableRufnummer197);
+        ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        ReusableMethods.sleep(1000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
+        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(1000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
-        teilnehmer.nameOrt.sendKeys("OM!-AXI$/Targät 5940_Ü'ÖÄ*öü#H");
+        ReusableMethods.sleep(1000);
+        teilnehmer.nameOrt.sendKeys("SP!-AXI$/Targät 5940_Ü'ÖÄ*öü#H");
+        String value= teilnehmer.nameOrt.getAttribute("value");
+        System.out.println(value);
+        ReusableMethods.sleep(1000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
         Assert.assertTrue(teilnehmer.bearbeitenButton.isEnabled());
     }
@@ -30,7 +36,7 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(3);
+        ReusableMethods.waitForPageToLoad(20);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
@@ -48,7 +54,7 @@ public class TeilnehmerNameTest {
         ReusableMethods.getLogin();
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(3);
+        ReusableMethods.waitForPageToLoad(20);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
@@ -65,7 +71,7 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(3);
+        ReusableMethods.waitForPageToLoad(20);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);

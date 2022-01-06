@@ -36,9 +36,10 @@ public class TeilnehmerLisensTest {
     public Object[] getData(){
 
         Object[] data={
-             "s204",
-             "s205",
-             "s206",
+             "s208",
+             "s210",
+             "s211",
+                "s212"
 
 
         };
