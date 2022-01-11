@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/Praktikant/IdeaProjects/Beispiel_2">
         <classes>
             <class name="daks.tests.teilnehmer.TeilnehmerNameTest"> </class>
-            <class name="daks.tests.teilnehmer.TeilnehmerRufnummerTest"> </class>
+
         </classes>
     </test>
 </suite>
