@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,9 @@ import org.apache.poi.ss.usermodel.*;
 
 
 public class ReusableMethods {
+
+  static  WebDriverWait wait =null;
+
 
     public static void getLogin(){
 
@@ -113,7 +117,6 @@ public class ReusableMethods {
             e.printStackTrace();
         }
 
-
         Sheet sheet = workbook.getSheet(sheetName);
         int rowCount=sheet.getPhysicalNumberOfRows();
 
@@ -137,6 +140,12 @@ public class ReusableMethods {
 
 
 
+
+
+
+
+
+
     public static WebElement getVisibilityOfWait(WebElement element){
 
 
@@ -148,11 +157,23 @@ public class ReusableMethods {
     }
 
 
+
+
     public static WebElement waitUntilClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait = new WebDriverWait(Driver.getDriver(), 20);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         return element;
     }
+
+
+
+
+    public static List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
+        return elementList;
+    }
+
 
 
 

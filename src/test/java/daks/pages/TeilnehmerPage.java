@@ -2,8 +2,11 @@ package daks.pages;
 
 import daks.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class TeilnehmerPage {
 
@@ -16,11 +19,14 @@ public class TeilnehmerPage {
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[10]")
     public WebElement teilnehmerButton;
 
-    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[4]")
+
+    // Jeder Seite hat locater geändert -> /a[5]  bis 5 Seite und dann ändern nochmal. Das bedutet, dass bis /a[5] benutzt wird.
+    //  rechte richtung =   > richtungstaste = a[6] ,    >I = EndeRichtungstaste = a[7]
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[5]")
     public WebElement richtungstaste;
 
-    @FindBy(xpath = "(//table)[3]//tr")
-    public WebElement tabelleRow;
+    @FindAll({@FindBy(xpath = "(//table)[3]//tr")})
+    public List<WebElement> tabelleRow;
 
     @FindBy(xpath = "(//table)[3]//tr[1]/td[2]")
     public WebElement tabelleRufnummer1;
@@ -36,6 +42,9 @@ public class TeilnehmerPage {
 
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[2]")
     public WebElement neuButton;
+
+    @FindBy(xpath = "//div[@class='WICButton_TEXT WICMessageBox_ButtonYes']")
+    public WebElement jaButton;
 
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[3]")
     public WebElement kopierenButton;
