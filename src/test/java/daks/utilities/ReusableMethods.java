@@ -29,6 +29,10 @@ public class ReusableMethods {
 
         LoginPage login = new LoginPage();
 
+      //  WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10); bu olmadan program nasil hatasiz calisiyor
+        //  bu yokken zaten calisiyordu. acaba bunu ekleyerek sleep siz calisir mi diye eklendi. basarisiz
+        //  bu eklendi ve sleepler silindikten yine ayni hata olan stale element hatasi vermeye basladi
+
         if(ReusableMethods.isAlertReady()){
 
             Driver.getDriver().switchTo().alert().accept();

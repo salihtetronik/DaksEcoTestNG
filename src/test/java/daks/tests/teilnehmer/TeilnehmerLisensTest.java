@@ -36,7 +36,6 @@ public class TeilnehmerLisensTest {
     }
 
 
-
     @Test
     public void nameListHinzufugen() {
 
@@ -51,7 +50,7 @@ public class TeilnehmerLisensTest {
             ReusableMethods.waitForPageToLoad(20);
 
             ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).sendKeys(list.get(i).get(0));
-           // ReusableMethods.waitForPageToLoad(20);
+            // ReusableMethods.waitForPageToLoad(20);
 
             ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
 
@@ -60,7 +59,7 @@ public class TeilnehmerLisensTest {
             ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton);
 
             ReusableMethods.sleep(500);
-           // ReusableMethods.waitForPageToLoad(20);
+            // ReusableMethods.waitForPageToLoad(20);
             Assert.assertTrue(teilnehmer.neuButton.isEnabled());
 
         }
@@ -68,23 +67,23 @@ public class TeilnehmerLisensTest {
     }
 
 
-        @Test
-        public void tabelleRowLoschen() {
+    @Test
+    public void tabelleRowLoschen() {
 
-            ReusableMethods.getLogin();
-            ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-            // ReusableMethods.waitForPageToLoad(30);
-            ReusableMethods.sleep(5000);
-            ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-          //  ReusableMethods.waitForPageToLoad(20);
-            ReusableMethods.sleep(5000);
-            ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        // ReusableMethods.waitForPageToLoad(30);
+        ReusableMethods.sleep(5000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        //  ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.sleep(5000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
 
-            for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
+        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
 
-                ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRow.get(i)).click();
-                teilnehmer.loschenButton.click();
-                ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
+            ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRow.get(i)).click();
+            teilnehmer.loschenButton.click();
+            ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
 
         }
     }
@@ -92,53 +91,67 @@ public class TeilnehmerLisensTest {
 
 
 
+    @Test
+    public void tabelleRowgerenzeKontrol() {
 
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
 
-@Test
-public void tabelleRowgerenzeKontrol(){
+        if (teilnehmer.tabelleRow.size() > 2000) {
 
-    ReusableMethods.getLogin();
-    ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+            System.out.println("teilnehmer.tabelleRow.size() ist gr0ßer als 2000");
 
-    if(teilnehmer.tabelleRow.size()>2000){
-
-        System.out.println("teilnehmer.tabelleRow.size() ist gr0ßer als 2000");
-
-    }else{
-        System.out.println("teilnehmer.tabelleRow.size() ist kleiner und gleich 2000");
-    }
-
-
-
-/*
-
-   List in size;
-
-    //teilnehmer.tabelleRow.get(teilnehmer.tabelleRow.size()-1);
-
-    if (arrayList != null && !arrayList.isEmpty()) {
-        T item = arrayList.get(arrayList.size()-1);
-    }
-
-
-    for (WebElement element:teilnehmer.tabelleRow) {
-        if (element != null) {
-            WebElement item = teilnehmer.tabelleRow.get(teilnehmer.tabelleRow.size() - 1);
-
-            System.out.println(item); // test ist Erfolgreich, ancak size yazdirmiyor
+        } else {
+            System.out.println("teilnehmer.tabelleRow.size() ist kleiner und gleich 2000");
         }
+
+
+        /*
+        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) { // size alamiyorum
+            System.out.println(teilnehmer.tabelleRow.size());
+        }
+         */
+
     }
 
 
-    */
 
 
-}
+    @Test
+    public void suchendeValueImList() {
+
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        //  ReusableMethods.waitForPageToLoad(20); // bunlarla kullanildiginda: java.lang.NullPointerException
+        //  ReusableMethods.sleep(5000); // java.lang.NullPointerException
+
+        for (WebElement element : teilnehmer.tabelleRow) {
+
+            String value = element.getAttribute("value");
+            if (value.contains("SPOLAT12345")) { // contains problem var sanirim ama yerine ne yazilacak
+                System.out.println("Das List enthält die Worter"); // test geciyor ama hic birsey yazmiyor
+            } else {
+                System.out.println("Das List enthält keine Worter");
+            }
+        }
+
+      /*
+
+        for(int i=0;i<teilnehmer.tabelleRow.size();i++){  // test geciyor ama hic birsey yazmiyor
+
+            String value = teilnehmer.tabelleRow.get(i).getAttribute("value");
+            if(value.contains("SPOLAT12345")){
+                System.out.println("Das List enthält die Worter");
+            } else {
+                System.out.println("Das List enthält keine Worter");
+            }
+            }
+        }
+
+       */
 
 
-
-
-
+    }
 
 
 
@@ -165,12 +178,11 @@ public void tabelleRowgerenzeKontrol(){
 
 
     @DataProvider
-    public Object[] getData(){
+    public Object[] getData() {
 
-        Object[] data={
+        Object[] data = {
 
-             "SPOLAT12345",
-
+                "SPOLAT12345",
 
 
         };

@@ -16,7 +16,7 @@ public class TeilnehmerNameTest {
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
        // ReusableMethods.waitForPageToLoad(20);
-        ReusableMethods.sleep(6000);
+        ReusableMethods.sleep(5000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
        // ReusableMethods.sleep(6000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
@@ -43,7 +43,7 @@ public class TeilnehmerNameTest {
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
       //  ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(6000);
+        ReusableMethods.sleep(5000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
@@ -73,7 +73,7 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
        // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(6000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
@@ -94,7 +94,7 @@ public class TeilnehmerNameTest {
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
        // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(6000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
