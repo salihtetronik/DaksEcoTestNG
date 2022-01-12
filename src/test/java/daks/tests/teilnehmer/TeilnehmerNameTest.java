@@ -15,7 +15,7 @@ public class TeilnehmerNameTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
-       // ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.waitForPageToLoad(10);
         ReusableMethods.sleep(5000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
        // ReusableMethods.sleep(6000);
@@ -25,10 +25,11 @@ public class TeilnehmerNameTest {
        // ReusableMethods.sleep(1000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         ReusableMethods.sleep(1000);
-        teilnehmer.nameOrt.sendKeys("SP!-AXI$/Targät Ü'ÖÄ*öü#H_5940");
+        teilnehmer.nameOrt.sendKeys("SP!-AXI$/Targät Ü'ÖÄ*öü#123456");
         ReusableMethods.sleep(1000);
         String value= teilnehmer.nameOrt.getAttribute("value");
-        Assert.assertEquals(value,"SP!-AXI$/Targät Ü'ÖÄ*öü#H_5940");
+
+        Assert.assertEquals(value,"SP!-AXI$/Targät Ü'ÖÄ*öü#123456");
         System.out.println(value);
         System.out.println(value.length());
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
