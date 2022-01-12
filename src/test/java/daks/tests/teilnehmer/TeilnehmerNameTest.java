@@ -25,11 +25,11 @@ public class TeilnehmerNameTest {
        // ReusableMethods.sleep(1000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         ReusableMethods.sleep(1000);
-        teilnehmer.nameOrt.sendKeys("yxcvbnmasdfghjklöäqwertzuiopük");
+        teilnehmer.nameOrt.sendKeys("yxcvbnmasdfghfklouqwertzueopak");
         ReusableMethods.sleep(1000);
         String value= teilnehmer.nameOrt.getAttribute("value");
 
-        Assert.assertEquals(value,"yxcvbnmasdfghjklöäqwertzuiopük");
+        Assert.assertEquals(value,"yxcvbnmasdfghfklouqwertzueopak");
         System.out.println(value);
         System.out.println(value.length());
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
