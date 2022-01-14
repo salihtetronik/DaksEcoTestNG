@@ -11,25 +11,19 @@ public class TeilnehmerNameTest {
 
     // Die administerten Daten können abspeichern.
     @Test
-    public void teilnehmerNameSpeichernTest1(){
+    public void teilnehmerNameSpeichernTest1() {
 
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.sleep(6000);
+        ReusableMethods.sleep(4000);
+        //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
-       // ReusableMethods.sleep(1000);
+        //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
-        ReusableMethods.sleep(1000);
         teilnehmer.nameOrt.sendKeys("yxcvbnmasdfghfklouqwertzueopak");
-        ReusableMethods.sleep(1000);
-        String value= teilnehmer.nameOrt.getAttribute("value");
-
-        Assert.assertEquals(value,"yxcvbnmasdfghfklouqwertzueopak");
+        String value = teilnehmer.nameOrt.getAttribute("value");
+        Assert.assertEquals(value, "yxcvbnmasdfghfklouqwertzueopak");
         System.out.println(value);
         System.out.println(value.length());
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
@@ -40,23 +34,22 @@ public class TeilnehmerNameTest {
 
     //Längenbegrenzungen wurden gemessen
     @Test
-    public void teilnehmerNameSpeichernTest2(){
+    public void teilnehmerNameSpeichernTest2() {
 
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
+        // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
-        ReusableMethods.sleep(1000);
+        // ReusableMethods.sleep(1000);
         teilnehmer.nameOrt.sendKeys("QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM123456"); // String length = 35
         String value = teilnehmer.nameOrt.getAttribute("value");
 
-        if(value.length()<=30){
+        if (value.length() <= 30) {
             System.out.println(value);
-        }else{
+        } else {
             System.out.println("String length ist Groß als 30");
         }
         System.out.println(value.length());
@@ -69,16 +62,15 @@ public class TeilnehmerNameTest {
 
 
     @Test
-    public void teilnehmerNameSpeichernTest3(){
+    public void teilnehmerNameSpeichernTest3() {
 
         ReusableMethods.getLogin();
 
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
+        // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("S");
         String value = teilnehmer.nameOrt.getAttribute("value");
@@ -91,15 +83,14 @@ public class TeilnehmerNameTest {
 
 
     @Test
-    public void teilnehmerNameSpeichernTest4(){
+    public void teilnehmerNameSpeichernTest4() {
 
         ReusableMethods.getLogin();
         ReusableMethods.waitUntilClickable(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
+        // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("");
         String value = teilnehmer.nameOrt.getAttribute("value");

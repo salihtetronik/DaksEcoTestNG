@@ -16,10 +16,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("1234567890*#");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -35,10 +35,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("/");
         //  Erwartetes  Ergebnis ist True(sichernButton soll aktive sein), Aktueles Ergebnis False. Test ist erfolglos
@@ -52,10 +52,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+        //ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("-");
         //  Erwartetes  Ergebnis True(sichernButton soll aktive sein), Aktueles Ergebnis False.
@@ -69,10 +69,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("+");
         //  Erwartetes  Ergebnis True(sichernButton soll aktive sein), Aktueles Ergebnis False.
@@ -86,11 +86,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys(" ");
         //  Erwartetes  Ergebnis True(sichernButton soll aktive sein), Aktueles Ergebnis False.
@@ -106,11 +105,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%");
         //  Erwartetes  Ergebnis False(sichernButton soll deaktive sein), aber Aktueles Ergebnis  ist True.
@@ -125,12 +123,11 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
        // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%1");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -147,12 +144,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%12");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -170,12 +165,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("*456#67890");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -192,12 +185,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("Abcd");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -215,12 +206,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-      //  ReusableMethods.waitForPageToLoad(10);
-        ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(4000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("äüöÄÜÖß");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);

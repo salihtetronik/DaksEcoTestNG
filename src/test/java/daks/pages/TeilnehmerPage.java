@@ -25,8 +25,29 @@ public class TeilnehmerPage {
     @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[5]")
     public WebElement richtungstaste;
 
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[1]")
+    public WebElement richtungstaste1;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[2]")
+    public WebElement richtungstaste2;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[3]")
+    public WebElement richtungstaste3;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[4]")
+    public WebElement richtungstaste4;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[5]")
+    public WebElement richtungstaste5;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[6]")
+    public WebElement richtungstaste6;
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[7]")
+    public WebElement richtungstaste7;
+
+    @FindAll({@FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a")})
+    public List<WebElement> richtungstasteList;
+
     @FindAll({@FindBy(xpath = "(//table)[3]//tr")})
     public List<WebElement> tabelleRow;
+
+    @FindAll({@FindBy(xpath = "(//table)[3]//tr/td")})
+    public List<WebElement> tabelleColumn;
 
     @FindBy(xpath = "(//table)[3]//tr[1]/td[2]")
     public WebElement tabelleRufnummer1;

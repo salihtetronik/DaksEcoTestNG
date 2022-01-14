@@ -145,6 +145,13 @@ public class ReusableMethods {
 
 
 
+    public static void wait(int secs) {
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -40,31 +41,28 @@ public class TeilnehmerLisensTest {
     public void nameListHinzufugen() {
 
         ReusableMethods.getLogin();
-        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
 
         List<List<String>> list = ReusableMethods.getListData("src/main/resources/TeilnehmerNameList.xlsx", "Tabelle1", 1);
+
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
 
         for (int i = 0; i < list.size(); i++) {
 
             ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
-            ReusableMethods.waitForPageToLoad(20);
-
+            // ReusableMethods.waitForPageToLoad(20);
             ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).sendKeys(list.get(i).get(0));
-            // ReusableMethods.waitForPageToLoad(20);
-
             ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
-
-            // ReusableMethods.waitForPageToLoad(20);
             ReusableMethods.sleep(500);
             ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton);
-
             ReusableMethods.sleep(500);
-            // ReusableMethods.waitForPageToLoad(20);
             Assert.assertTrue(teilnehmer.neuButton.isEnabled());
 
         }
-
     }
+
+
+
+
 
 
     @Test
@@ -72,11 +70,8 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        // ReusableMethods.waitForPageToLoad(30);
         ReusableMethods.sleep(5000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-        //  ReusableMethods.waitForPageToLoad(20);
-        ReusableMethods.sleep(5000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
 
         for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
@@ -91,28 +86,39 @@ public class TeilnehmerLisensTest {
 
 
 
+
+
     @Test
     public void tabelleRowgerenzeKontrol() {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.sleep(5000);
+       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
 
-        if (teilnehmer.tabelleRow.size() > 2000) {
+        for (int i = 0; i < teilnehmer.richtungstasteList.size(); i++) {
 
-            System.out.println("teilnehmer.tabelleRow.size() ist gr0ßer als 2000");
+            ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
 
-        } else {
-            System.out.println("teilnehmer.tabelleRow.size() ist kleiner und gleich 2000");
+                if (teilnehmer.tabelleRow.size() <= 200) {
+
+                    System.out.println("teilnehmer.tabelleRow.size() ist kleiner oder gleich  200");
+
+                } else {
+                    System.out.println("teilnehmer.tabelleRow.size() ist gr0ßer als 200");
+                }
+
+                System.out.println(teilnehmer.tabelleRow.size());
+                //teilnehmer.tabelleRow.size() ist kleiner oder gleich  200
+                //200  => bu sekilde 9 tane yazdiriyor. Ancak 9. sayfada 200 den az isim var. tikladigi sayfanin size ni aliyor
+            }
+
         }
 
 
-        /*
-        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) { // size alamiyorum
-            System.out.println(teilnehmer.tabelleRow.size());
-        }
-         */
 
-    }
+
 
 
 
@@ -122,36 +128,47 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        //  ReusableMethods.waitForPageToLoad(20); // bunlarla kullanildiginda: java.lang.NullPointerException
-        //  ReusableMethods.sleep(5000); // java.lang.NullPointerException
+        ReusableMethods.sleep(5000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
 
-        for (WebElement element : teilnehmer.tabelleRow) {
+        String value = teilnehmer.tabelleColumn.get(1).getAttribute("value");
+        System.out.println(value);//null
 
-            String value = element.getAttribute("value");
-            if (value.contains("SPOLAT12345")) { // contains problem var sanirim ama yerine ne yazilacak
-                System.out.println("Das List enthält die Worter"); // test geciyor ama hic birsey yazmiyor
-            } else {
-                System.out.println("Das List enthält keine Worter");
+        System.out.println(teilnehmer.tabelleColumn.indexOf("NST: 578920016"));// -1
+
+        boolean b=teilnehmer.tabelleColumn.contains("NST: 578920016");
+        System.out.println(b);// false veriyor, aslinda listede var, hem de ilk sayfada
+
+        /*
+        for (int i = 0; i < teilnehmer.richtungstasteList.size(); i++) {
+
+
+            for (int j = 0; j < teilnehmer.tabelleColumn.size(); j++) {
+
+                String value = teilnehmer.tabelleColumn.get(j).getAttribute("value");
+
+                boolean b=teilnehmer.tabelleColumn.contains("NST: 578920016");
+                System.out.println(b);
+
+
+                if (value.equalsIgnoreCase("z01")) { // java.lang.NullPointerException
+                    System.out.println(value);
+                } else {
+                    System.out.println("Das List enthält keiner Worter");
+                }
+
+
+                 */
             }
-        }
-
-      /*
-
-        for(int i=0;i<teilnehmer.tabelleRow.size();i++){  // test geciyor ama hic birsey yazmiyor
-
-            String value = teilnehmer.tabelleRow.get(i).getAttribute("value");
-            if(value.contains("SPOLAT12345")){
-                System.out.println("Das List enthält die Worter");
-            } else {
-                System.out.println("Das List enthält keine Worter");
-            }
-            }
-        }
-
-       */
 
 
-    }
+
+
+
+
+
+
+
 
 
 
