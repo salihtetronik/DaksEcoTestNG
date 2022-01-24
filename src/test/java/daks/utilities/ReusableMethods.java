@@ -1,10 +1,7 @@
 package daks.utilities;
 
 import daks.pages.LoginPage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,18 +17,12 @@ import org.apache.poi.ss.usermodel.*;
 
 public class ReusableMethods {
 
-  static  WebDriverWait wait =null;
+  static WebDriverWait wait =null;
 
 
     public static void getLogin(){
 
         Driver.getDriver().get("http://127.0.0.1");
-
-        LoginPage login = new LoginPage();
-
-      //  WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10); bu olmadan program nasil hatasiz calisiyor
-        //  bu yokken zaten calisiyordu. acaba bunu ekleyerek sleep siz calisir mi diye eklendi. basarisiz
-        //  bu eklendi ve sleepler silindikten yine ayni hata olan stale element hatasi vermeye basladi
 
         if(ReusableMethods.isAlertReady()){
 
@@ -39,6 +30,14 @@ public class ReusableMethods {
 
         }else
             System.out.println("kein alert");
+
+        LoginPage login = new LoginPage();
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        //bu olmadan program nasil hatasiz calisiyor
+        //  bu yokken zaten calisiyordu. acaba bunu ekleyerek sleep siz calisir mi diye eklendi. basarisiz
+        //  bu eklendi ve sleepler silindikten yine ayni hata olan stale element hatasi vermeye basladi
+
 
         login.userName.sendKeys("sysadm");
         login.password.sendKeys("sysadm");
@@ -168,6 +167,10 @@ public class ReusableMethods {
     }
 
 
+    public static void waitUntilVisible(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
 
 
     public static WebElement waitUntilClickable(WebElement element) {
@@ -188,6 +191,19 @@ public class ReusableMethods {
 
 
 
+    public static void clickFunction(WebElement element){
+        try {
+            scrollToElement(element);
+            waitUntilVisible(element);
+            waitUntilClickable(element);
+            element.click();
+        }catch (StaleElementReferenceException e){
+            System.out.println(e.getMessage());
+            clickFunction(element);
+            element.click();
+        }
+    }
+
     public static boolean isDisplayed(WebElement element) {
         try {
             if(element.isDisplayed())
@@ -196,5 +212,26 @@ public class ReusableMethods {
             return false;
         }
         return false;
+    }
+
+
+
+    public static void clickWithJS(WebElement element) {
+        scrollToElement(element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+
+
+
+    public static void clickTo(WebElement locator){
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        try {
+            element.click();
+        } catch (StaleElementReferenceException st){
+            wait.until(ExpectedConditions.refreshed( ExpectedConditions.elementToBeClickable(element))).click();
+        } catch (ElementClickInterceptedException e){
+            clickWithJS(element);
+        }
     }
 }

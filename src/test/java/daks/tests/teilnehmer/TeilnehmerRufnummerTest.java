@@ -16,14 +16,12 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("1234567890*#");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
-        //  Erwartetes  Ergebnis True(sichernButton soll aktive sein), Aktueles Ergebnis auch true
+        //  Erwartetes  Ergebnis ist True(sichernButton soll aktive sein), Aktueles Ergebnis auch true
         Assert.assertTrue(teilnehmer.sichernButton.isEnabled());
     }
 
@@ -35,9 +33,7 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("/");
@@ -46,15 +42,14 @@ public class TeilnehmerRufnummerTest {
     }
 
 
+
     //  "-" : Obwohl gültiger Wert in der Anforderungliste, tatsächlich ungültiger Wert
     @Test
     public void teilnehmerRufnummerTest3(){
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-        //ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("-");
@@ -63,15 +58,15 @@ public class TeilnehmerRufnummerTest {
     }
 
 
+
+
     //  "+" : Obwohl gültiger Wert in der Anforderungliste, tatsächlich ungültiger Wert
     @Test
     public void teilnehmerRufnummerTest4(){
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("+");
@@ -86,9 +81,8 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.waitForPageToLoad(10);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys(" ");
@@ -105,9 +99,8 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.waitForPageToLoad(10);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%");
@@ -123,10 +116,7 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.waitForPageToLoad(10);
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%1");
@@ -144,9 +134,7 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("%12");
@@ -165,12 +153,10 @@ public class TeilnehmerRufnummerTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
-        teilnehmer.rufnummer.sendKeys("*456#67890");
+        teilnehmer.rufnummer.sendKeys("0123*456#07890");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
         //  Erwartetes  Ergebnis True(sichernButton soll aktive sein), Aktueles Ergebnis auch true. Test ist Erfolgreich
         Assert.assertTrue(teilnehmer.sichernButton.isEnabled());
@@ -179,15 +165,13 @@ public class TeilnehmerRufnummerTest {
 
 
 
-    // In die Rufnummernfelder können 0,1,2,3,4,5,6,7,8,9, *,# eingegeben werden.
+    // In die Rufnummernfelder können nur 0,1,2,3,4,5,6,7,8,9, *,# eingegeben werden.
     @Test
     public void teilnehmerRufnummerTest10() {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-      //  ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-       // ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("Abcd");
@@ -200,15 +184,13 @@ public class TeilnehmerRufnummerTest {
 
 
 
-    // In die Rufnummernfelder können 0,1,2,3,4,5,6,7,8,9, *,# eingegeben werden.
+    // In die Rufnummernfelder können nur 0,1,2,3,4,5,6,7,8,9, *,# eingegeben werden.
     @Test
     public void teilnehmerRufnummerTest11() {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(4000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
-      //  ReusableMethods.scrollToElement(teilnehmer.tabelleRufnummer197);
+        ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("äüöÄÜÖß");
@@ -216,5 +198,9 @@ public class TeilnehmerRufnummerTest {
         //  Erwartetes  Ergebnis False(sichernButton soll deaktive sein), Aktueles Ergebnis auch False. Test ist erfolgreich
         Assert.assertFalse(teilnehmer.sichernButton.isEnabled());
     }
+
+
+
+
 
 }

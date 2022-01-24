@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 
 public class TeilnehmerLisensTest {
@@ -42,14 +44,14 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
 
-        List<List<String>> list = ReusableMethods.getListData("src/main/resources/TeilnehmerNameList.xlsx", "Tabelle1", 1);
+        List<List<String>> list = ReusableMethods.getListData("src/main/resources/TeilnehmerNameList.xlsx", "Tabelle2", 1);
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
 
         for (int i = 0; i < list.size(); i++) {
 
             ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
-            // ReusableMethods.waitForPageToLoad(20);
+            ReusableMethods.waitForPageToLoad(20);
             ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).sendKeys(list.get(i).get(0));
             ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
             ReusableMethods.sleep(500);
@@ -61,31 +63,157 @@ public class TeilnehmerLisensTest {
     }
 
 
+    @Test
+    public void tabelleRowLoschen() {
+        ReusableMethods.getLogin();
+        ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.sleep(1000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste3).click();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
+        System.out.println(teilnehmer.tabelleRow.size());
+        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
+            teilnehmer.tabelleRow.get(i).click();
+            teilnehmer.loschenButton.click();
+            ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
+        }
 
 
+    }
 
 
     @Test
-    public void tabelleRowLoschen() {
-
+    public void tabelleRowLoschen2() {
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
+        ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.sleep(3000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
 
-        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
+        String name = "";
 
-            ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRow.get(i)).click();
+        for (WebElement element : teilnehmer.tabelleEndgerätetd3) {
+            System.out.println(element.getText());
+            name = element.getText();
+        }
+
+        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
+            teilnehmer.tabelleRow.get(i).click();
             teilnehmer.loschenButton.click();
             ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
 
+            if (teilnehmer.tabelleRow.get(i).getText().contains(name)) {
+                teilnehmer.datensatzButton.click();
+                 teilnehmer.tabelleRow.get(i).click();
+                teilnehmer.loschenButton.click();
+                // ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
+
+            }
         }
+// td3 teki tetleri yaziyor, bir tane row siliyor sonra hata veriyor, ancak hata yazmiyor
     }
 
 
 
 
+
+        /*
+        Silme testi Teilnehmer menusunde ilgili yere click yaptiktan sonra löschen Button nuna tiklanir ve jaButtonu cikar ona tiklanarak, ilgili row silinir
+        Ancak;
+        Endgeräte sutunu dolu olanlara gelince uyari veriyor. bu uyariyi ok deyip, solmenude yer alan Rundruf menusune gidip,
+        Bezeichnung altinda yer alan ilgili elementi ordan sildikten sonra, tekrar Teilnehmer menusune gelip, ayni menuye tikladiktan sonra loschenButtonu sonra jaButtonuna
+        tiklanarak siliniyor.
+        Bunun icin;
+        1. Datensatz uyarisi ciktiginda, o uyariya ok deyip, row tekrar click yapmak gerekir ve sonra tekrar löschen butonuna tiklayip, cikan jaButtonuna click yapmak gerekir.
+        if() kurgusu nasil olacak?
+        2.Datensatz uyarisi geldiginde on adimi atlayarak calismaya devam et. en kolay yol bu görunuyor ama nasil yapilacak?
+        3.Datensatz uyarisi sadece Endgeräte kismi dolu olanlar icin cikyor. bir kontrol ile Endgeräte dolu olanlari görmezden gel veya atla seklinde bir program yazilmasi gerekir
+         */
+
+
+    @Test
+    public void tabelleRowLoschen3() { //bu program cok hizli birsekilde sildi. yaklasik 1.36 sn
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.waitForPageToLoad(10);
+        ReusableMethods.sleep(5000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
+        String name = "";
+        boolean bos = true;
+
+        if (bos) {
+            for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
+                teilnehmer.tabelleRow.get(i).click();
+                teilnehmer.loschenButton.click();
+                ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
+
+            }
+        }
+
+        for (int j = 0; j < teilnehmer.tabelleEndgerätetd3.size(); j++) {
+            teilnehmer.datensatzButton.click();
+            teilnehmer.tabelleRow.get(j).click();
+            teilnehmer.loschenButton.click();
+            ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
+            name += teilnehmer.tabelleEndgerätetd3.get(j);
+            //break;
+
+        }
+    }
+
+
+    @Test
+    public void suchenValueInTabelleTest() {
+
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        //ReusableMethods.waitForPageToLoad(10);
+        ReusableMethods.sleep(4000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
+
+        boolean gibtEs = true;
+
+        for (int i = 0; i < teilnehmer.tabelletd1.size(); i++) {
+            if (teilnehmer.tabelletd1.get(i).getText().contains("NST: 578920040")) {
+                System.out.println(i + 1 + " , " + "name = " + teilnehmer.tabelletd1.get(i).getText());
+                gibtEs = false;
+                break;
+            }
+        }
+        if (gibtEs) {
+            System.out.println("NST: 578920040 steht nicht in der Tabelle");
+        }
+    }
+
+
+    @Test
+    public void suchenValueInTabelleTest2() {
+
+        ReusableMethods.getLogin();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        // ReusableMethods.waitForPageToLoad(20);
+        ReusableMethods.sleep(4000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
+        //teilnehmer.richtungstaste.click();
+
+        String name = "NST: 578920098";
+        boolean gibtEs = true;
+
+        for (int i = 0; i < teilnehmer.tabelletd1.size(); i++) {
+            if (teilnehmer.tabelletd1.get(i).getText().equalsIgnoreCase(name)) {
+                System.out.println(i + 1 + " , " + "name = " + name + " , das steht in der Tabelle");
+                gibtEs = false;
+                break;
+            }
+        }
+
+        if (gibtEs) {
+            System.out.println(name + " steht nicht in der Tabelle");
+
+        }
+    }
 
 
     @Test
@@ -94,84 +222,59 @@ public class TeilnehmerLisensTest {
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(20);
-        ReusableMethods.sleep(5000);
-       // ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste7).click();
 
-        for (int i = 0; i < teilnehmer.richtungstasteList.size(); i++) {
+        for (int i = 0; i < teilnehmer.tabelleRow.size(); i++) {
 
-            ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+            if (teilnehmer.tabelleRow.size() == 200) {
 
-                if (teilnehmer.tabelleRow.size() <= 200) {
-
-                    System.out.println("teilnehmer.tabelleRow.size() ist kleiner oder gleich  200");
-
-                } else {
-                    System.out.println("teilnehmer.tabelleRow.size() ist gr0ßer als 200");
-                }
-
-                System.out.println(teilnehmer.tabelleRow.size());
-                //teilnehmer.tabelleRow.size() ist kleiner oder gleich  200
-                //200  => bu sekilde 9 tane yazdiriyor. Ancak 9. sayfada 200 den az isim var. tikladigi sayfanin size ni aliyor
+                System.out.println("teilnehmer.tabelleRow.size() = " + teilnehmer.tabelleRow.size() + ", Das bedeutet : " + "teilnehmer.tabelleRow.size() ist gleich  200");
+                break;
+            } else if (teilnehmer.tabelleRow.size() < 200) {
+                System.out.println("teilnehmer.tabelleRow.size() = " + teilnehmer.tabelleRow.size() + ", Das bedeutet : " + "teilnehmer.tabelleRow.size() ist  kleiner von 200");
+                break;
+            } else {
+                System.out.println("teilnehmer.tabelleRow.size() ist großer als  200");
+                break;
             }
 
         }
 
+    }
 
 
+    public static void main(String[] args) {
+
+        long tcNo = 2345678900l;
+
+        long ilkHane = tcNo / 10000000000l;
+
+        boolean uzunlukDogruMu = ("" + tcNo).length() == 11;
+
+        int sonRakam = (int) tcNo % 10;
+
+        if (ilkHane != 0 && uzunlukDogruMu == true && sonRakam % 2 == 0) {
+
+            System.out.println("Tebrikler!!! dogru no girdiniz...");
+        }
+
+        if (ilkHane == 0) {
+
+            System.out.println("ilk hane 0 olamaz...");
+        }
+
+        if (sonRakam % 2 != 0) {
+
+            System.out.println("son rakam 2 ile tam bolunebilmeli");
+        }
+
+        if (uzunlukDogruMu == false) {
+
+            System.out.println("tc no 11 haneden olusmalidir");
+        }
 
 
-
-
-
-    @Test
-    public void suchendeValueImList() {
-
-        ReusableMethods.getLogin();
-        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
-
-        String value = teilnehmer.tabelleColumn.get(1).getAttribute("value");
-        System.out.println(value);//null
-
-        System.out.println(teilnehmer.tabelleColumn.indexOf("NST: 578920016"));// -1
-
-        boolean b=teilnehmer.tabelleColumn.contains("NST: 578920016");
-        System.out.println(b);// false veriyor, aslinda listede var, hem de ilk sayfada
-
-        /*
-        for (int i = 0; i < teilnehmer.richtungstasteList.size(); i++) {
-
-
-            for (int j = 0; j < teilnehmer.tabelleColumn.size(); j++) {
-
-                String value = teilnehmer.tabelleColumn.get(j).getAttribute("value");
-
-                boolean b=teilnehmer.tabelleColumn.contains("NST: 578920016");
-                System.out.println(b);
-
-
-                if (value.equalsIgnoreCase("z01")) { // java.lang.NullPointerException
-                    System.out.println(value);
-                } else {
-                    System.out.println("Das List enthält keiner Worter");
-                }
-
-
-                 */
-            }
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     @Test(dataProvider = "getData")
@@ -199,8 +302,12 @@ public class TeilnehmerLisensTest {
 
         Object[] data = {
 
+                "SPOLAT1",
+                "SPOLAT12",
+                "SPOLAT123",
+                "SPOLAT1234",
                 "SPOLAT12345",
-
+                "SPOLAT123456",
 
         };
         return data;

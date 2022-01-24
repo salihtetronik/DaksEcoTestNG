@@ -5,14 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class LoginPage {
 
     public LoginPage() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath ="//input[@name='user']")
+    @FindBy(xpath = "//input[@name='user']")
     public WebElement userName;
 
 
@@ -31,4 +35,25 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='errorMesage']")
 
     public WebElement errorMesage;
+
+
+    public static void main(String[] args) {
+
+        ArrayList isimler=new ArrayList();
+
+        isimler.add("Salih");
+        isimler.add("ali");
+        isimler.add("veli");
+        isimler.add("deli");
+
+        System.out.println(isimler);
+
+
+
+
+
+
+    }
+
+
 }

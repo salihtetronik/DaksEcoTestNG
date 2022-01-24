@@ -22,7 +22,7 @@ public class TeilnehmerPage {
 
     // Jeder Seite hat locater geändert -> /a[5]  bis 5 Seite und dann ändern nochmal. Das bedutet, dass bis /a[5] benutzt wird.
     //  rechte richtung =   > richtungstaste = a[6] ,    >I = EndeRichtungstaste = a[7]
-    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[5]")
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[3]")
     public WebElement richtungstaste;
 
     @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[1]")
@@ -49,8 +49,18 @@ public class TeilnehmerPage {
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td")})
     public List<WebElement> tabelleColumn;
 
+    @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[1]")})
+    public List<WebElement> tabelletd1;
+
+    @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[3]")})
+    public List<WebElement> tabelleEndgerätetd3;
+
+
     @FindBy(xpath = "(//table)[3]//tr[1]/td[2]")
     public WebElement tabelleRufnummer1;
+
+    @FindBy(xpath = "(//table)[3]//tr[3]/td[2]")
+    public WebElement tableRufnummer3;
 
     @FindBy(xpath = "(//table)[3]//tr[197]/td[2]")
     public WebElement tabelleRufnummer197;
@@ -91,16 +101,26 @@ public class TeilnehmerPage {
     @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[6]")
     public WebElement passwortWiederholung;
 
+    @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[8]")
+    public WebElement mailAdresse;
+
+
     @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[9]")
     public WebElement rufnummer;
 
     @FindBy(xpath = "(//input[@type='checkbox'])[2]")
     public WebElement wirdUberwacht;
 
+    @FindBy(xpath = "//button[@class='WICButton WICMessageBox_ButtonOK']")
+    public WebElement datensatzButton;
 
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[1]")
     public WebElement sichernButton;
 
-    @FindBy(xpath = "(//td[@align='left'])[15]")
-    public WebElement td;
+
+
+
+
+
+
 }
