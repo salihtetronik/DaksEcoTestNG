@@ -5,6 +5,7 @@
         <classes>
             <class name="daks.tests.teilnehmer.TeilnehmerNameTest">   </class>
             <class name="daks.tests.teilnehmer.TeilnehmerRufnummerTest">   </class>
+            <class name="daks.tests.teilnehmer.MailAdresseTest">   </class>
         </classes>
     </test>
 </suite>

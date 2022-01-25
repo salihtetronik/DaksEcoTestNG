@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EndgerätePage {
+public class EndgeratePage {
 
-    public EndgerätePage() {
+    public EndgeratePage() {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -17,7 +17,7 @@ public class EndgerätePage {
 
 
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[9]")
-    public WebElement endgeräteButton;
+    public WebElement endgerateButton;
 
     @FindAll
             ({@FindBy(xpath = "(//table)[3]//tr/td[4]")})

@@ -15,6 +15,7 @@ public class MailAdresseTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.doubleClick(teilnehmer.tableRufnummer3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
@@ -39,8 +40,8 @@ public class MailAdresseTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
-        //ReusableMethods.sleep(5000);
         ReusableMethods.doubleClick(teilnehmer.tableRufnummer3);
        // ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
@@ -51,7 +52,7 @@ public class MailAdresseTest {
         if (value.contains("@")) {
             System.out.println("Gratuliere! Value enthält @ zeichen.");
         } else {
-            System.out.println(" Sie sollen @ zeichen eingegeben werden");
+            System.out.println("Sie sollen @ zeichen eingegeben werden!");
         }
         Assert.assertTrue(value.contains("@"));
     }
@@ -64,7 +65,7 @@ public class MailAdresseTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        // ReusableMethods.waitForPageToLoad(10);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.doubleClick(teilnehmer.tableRufnummer3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
@@ -75,7 +76,7 @@ public class MailAdresseTest {
         if (value.contains(".com")) {
             System.out.println("Gratuliere! Value enthält .com zeichen");
         } else {
-            System.out.println(" Sie sollen .com zeichen eingegeben werden");
+            System.out.println("Sie sollen .com zeichen eingegeben werden!");
         }
 
         Assert.assertTrue(value.contains(".com"));

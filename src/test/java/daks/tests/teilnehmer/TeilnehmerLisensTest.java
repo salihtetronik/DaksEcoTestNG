@@ -44,7 +44,7 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
 
-        List<List<String>> list = ReusableMethods.getListData("src/main/resources/TeilnehmerNameList.xlsx", "Tabelle2", 1);
+        List<List<String>> list = ReusableMethods.getListData("src/main/resources/TeilnehmerNameList.xlsx", "Tabelle6", 1);
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
 
@@ -88,7 +88,7 @@ public class TeilnehmerLisensTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(20);
         ReusableMethods.sleep(3000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste3).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
 
         String name = "";
@@ -138,7 +138,7 @@ public class TeilnehmerLisensTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(10);
         ReusableMethods.sleep(5000);
-        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste).click();
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste2).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.tabelleRufnummer1);
         String name = "";
         boolean bos = true;
@@ -150,7 +150,9 @@ public class TeilnehmerLisensTest {
                 ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
 
             }
-        }
+        }else{
+
+
 
         for (int j = 0; j < teilnehmer.tabelleEndgerätetd3.size(); j++) {
             teilnehmer.datensatzButton.click();
@@ -159,9 +161,12 @@ public class TeilnehmerLisensTest {
             ReusableMethods.getVisibilityOfWait(teilnehmer.jaButton).click();
             name += teilnehmer.tabelleEndgerätetd3.get(j);
             //break;
-
+        }
         }
     }
+
+
+
 
 
     @Test
@@ -169,7 +174,6 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        //ReusableMethods.waitForPageToLoad(10);
         ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
 
@@ -193,12 +197,11 @@ public class TeilnehmerLisensTest {
 
         ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        // ReusableMethods.waitForPageToLoad(20);
         ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
-        //teilnehmer.richtungstaste.click();
+        teilnehmer.richtungstaste4.click();
 
-        String name = "NST: 578920098";
+        String name = "x200";
         boolean gibtEs = true;
 
         for (int i = 0; i < teilnehmer.tabelletd1.size(); i++) {

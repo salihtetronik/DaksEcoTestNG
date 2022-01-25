@@ -61,7 +61,7 @@ public class TeilnehmerNameTest {
         ReusableMethods.getLogin();
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(3000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("z");
