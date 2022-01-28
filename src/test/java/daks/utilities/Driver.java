@@ -12,17 +12,17 @@ public class Driver {
 
     static WebDriver driver;
 
-   // public static WebDriverWait wait;
+    // public static WebDriverWait wait;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if(driver == null){
+        if (driver == null) {
 
             String browser = ConfigurationReader.getProperty("browser");
 
-            switch (browser){
+            switch (browser) {
 
-                case  "chrome":
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
@@ -34,18 +34,18 @@ public class Driver {
             }
         }
 
-       // driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      //  wait = new WebDriverWait(driver, 10);
+        // driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //  wait = new WebDriverWait(driver, 10);
 
         return driver;
     }
 
-    public static void closeDriver(){
+    public static void closeDriver() {
 
-        if(driver!= null){
+        if (driver != null) {
             driver.quit();
-            driver =null;
+            driver = null;
         }
     }
 

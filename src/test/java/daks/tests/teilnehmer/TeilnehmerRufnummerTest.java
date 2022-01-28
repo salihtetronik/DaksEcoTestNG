@@ -3,6 +3,7 @@ package daks.tests.teilnehmer;
 import daks.pages.TeilnehmerPage;
 import daks.utilities.ReusableMethods;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TeilnehmerRufnummerTest {
@@ -10,14 +11,21 @@ public class TeilnehmerRufnummerTest {
     TeilnehmerPage teilnehmer =new TeilnehmerPage();
 
 
+    @BeforeMethod
+    void beforeMethod(){
+
+        ReusableMethods.getLogin();
+    }
+
+
+
     // In die Rufnummernfelder können 0,1,2,3,4,5,6,7,8,9, *,# eingegeben werden.
     @Test
     public void teilnehmerRufnummerTest1(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("1234567890*#");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton);
@@ -31,10 +39,9 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest2(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
-        ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.rufnummer).clear();
         teilnehmer.rufnummer.sendKeys("/");
         //  Erwartetes  Ergebnis ist True(sichernButton soll aktive sein), Aktueles Ergebnis False. Test ist erfolglos
@@ -47,7 +54,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest3(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -64,7 +70,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest4(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -75,11 +80,11 @@ public class TeilnehmerRufnummerTest {
     }
 
 
+
     //  " " : Obwohl gültiger Wert in der Anforderungliste, tatsächlich ungültiger Wert
     @Test
     public void teilnehmerRufnummerTest5(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(10);
         ReusableMethods.sleep(3000);
@@ -97,7 +102,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest6(){
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.waitForPageToLoad(10);
         ReusableMethods.sleep(3000);
@@ -114,7 +118,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest7() {
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -132,7 +135,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest8() {
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -151,7 +153,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest9() {
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -169,7 +170,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest10() {
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);
@@ -188,7 +188,6 @@ public class TeilnehmerRufnummerTest {
     @Test
     public void teilnehmerRufnummerTest11() {
 
-        ReusableMethods.getLogin();
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(3000);
         ReusableMethods.doubleClick(teilnehmer.tabelleRufnummer1);

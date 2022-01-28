@@ -19,10 +19,12 @@ public class TeilnehmerPage {
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[10]")
     public WebElement teilnehmerButton;
 
+    @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[11]")
+    public WebElement rundrufeButton;
 
     // Jeder Seite hat locater geändert -> /a[5]  bis 5 Seite und dann ändern nochmal. Das bedutet, dass bis /a[5] benutzt wird.
     //  rechte richtung =   > richtungstaste = a[6] ,    >I = EndeRichtungstaste = a[7]
-    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[3]")
+    @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[1]")
     public WebElement richtungstaste;
 
     @FindBy(xpath = "//div[@class='WICTable_PAGINATORDIV GMDTable']/a[1]")
@@ -46,11 +48,17 @@ public class TeilnehmerPage {
     @FindAll({@FindBy(xpath = "(//table)[3]//tr")})
     public List<WebElement> tabelleRow;
 
+    @FindBy(xpath = "(//table)[3]//tr[1]")
+    public WebElement tabelleRow1;
+
+    @FindBy(xpath = "(//table)[3]//tr[11]")
+    public WebElement tabelleRow11;
+
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td")})
     public List<WebElement> tabelleColumn;
 
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[1]")})
-    public List<WebElement> tabelletd1;
+    public List<WebElement> tabelleNameOrt;
 
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[3]")})
     public List<WebElement> tabelleEndgerätetd3;
@@ -114,9 +122,24 @@ public class TeilnehmerPage {
     @FindBy(xpath = "//button[@class='WICButton WICMessageBox_ButtonOK']")
     public WebElement datensatzButton;
 
+    @FindBy(xpath = "//div[@class='WICView_CLIENTAREA WICMessageBox_Text']/br")
+    public WebElement datensatzText;
+
+    @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[2]")})
+    public List<WebElement> tabelleRundrufeBezeichnung;
+
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[1]")
     public WebElement sichernButton;
 
+    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[2]")
+    public WebElement abbrechenButton;
+
+    @FindBy(xpath = "//button[@title='Zum nächsten Eintrag springen']")
+    public WebElement nextButton;
+
+
+    @FindBy(xpath = "//button[@class='WICButton ActionButton PREVBTN']")
+    public WebElement previousButton;
 
 
 

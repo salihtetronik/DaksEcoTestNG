@@ -51,12 +51,12 @@ public class BasisAllgemeines {
         ReusableMethods.getVisibilityOfWait(basis.anzahlHochpriorProsses);
         String  value = basis.anzahlHochpriorProssesOption2.getAttribute("value");
 
-        if (value.contains("2")) {
+        if (value.equals("2")) {
             System.out.println(value);
         } else {
-            System.out.println("basis.anzahlHochpriorProssesOption2.getAttribute() enthält keine anzahlHochpriorProssesOption.getAttribute()");
+            System.out.println(value + " enthält keine anzahlHochpriorProssesOption.getAttribute()");
         }
-        Assert.assertTrue(value.contains("2"));
+        Assert.assertEquals(value,"2");
 
     }
 
@@ -77,10 +77,11 @@ public class BasisAllgemeines {
         } else {
             System.out.println("Value ist kein gleich 35");
         }
-
         Assert.assertEquals(value, "35");
 
     }
+
+
 
 
     @Test
@@ -95,10 +96,11 @@ public class BasisAllgemeines {
         } else {
             System.out.println("Value ist kein gleich 20");
         }
-
         Assert.assertEquals(value, "20");
 
     }
+
+
 
 
     @Test
@@ -113,10 +115,11 @@ public class BasisAllgemeines {
         } else {
             System.out.println("Value ist kein gleich 60");
         }
-
         Assert.assertEquals(value, "60");
 
     }
+
+
 
 
     @Test
@@ -131,10 +134,12 @@ public class BasisAllgemeines {
         } else {
             System.out.println("Value ist kein gleich 30");
         }
-
         Assert.assertEquals(value, "30");
 
     }
+
+
+
 
 
     @Test
@@ -149,10 +154,11 @@ public class BasisAllgemeines {
         } else {
             System.out.println("Value ist kein gleich 15");
         }
-
         Assert.assertEquals(value, "15");
 
     }
+
+
 
 
 
