@@ -23,8 +23,6 @@ public class MailAdresseTest {
     }
 
 
-
-
     @Test
     public void mailAdresseTest1() {
 
@@ -33,7 +31,7 @@ public class MailAdresseTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
-        teilnehmer.mailAdresse.sendKeys("salih@@tetronik.com");
+        teilnehmer.mailAdresse.sendKeys("salihtetronik.com");
         String value = teilnehmer.mailAdresse.getAttribute("value");
         System.out.println(value);
 
@@ -50,7 +48,6 @@ public class MailAdresseTest {
     @Test
     public void mailAdresseTest2() {
 
-
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
@@ -65,7 +62,6 @@ public class MailAdresseTest {
         } else {
             System.out.println("Sie sollen .com zeichen eingeben!");
         }
-
         //.com zeichen soll zum Felder eingegeben werden
         Assert.assertTrue(value.contains(".com"));
     }
@@ -79,20 +75,18 @@ public class MailAdresseTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.doubleClick(teilnehmer.tableRufnummer3);
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
-        teilnehmer.mailAdresse.sendKeys("salih@t-online.de");
+        teilnehmer.mailAdresse.sendKeys("salih@gmail.com");
         String value = teilnehmer.mailAdresse.getAttribute("value");
         System.out.println(value);
 
-        if (value.equals("salih@t-online.de")) {
+        if (value.equals("salih@gmail.com")) {
             System.out.println("Gratuliere! Sie haben eine richtige E-Mail eingegeben.");
         } else {
             System.out.println("Sie sollen eine richtige E-Mail eingeben.");
         }
 
-        Assert.assertEquals(value, "salih@t-online.de");
+        Assert.assertEquals(value, "salih@gmail.com");
     }
-
-
 
 
     @Test
@@ -103,7 +97,7 @@ public class MailAdresseTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
-        teilnehmer.mailAdresse.sendKeys("salihh@gmail.com");
+        teilnehmer.mailAdresse.sendKeys("salih@gmail.com");
         String value = teilnehmer.mailAdresse.getAttribute("value");
         System.out.println(value);
         int index = value.indexOf("@");
@@ -116,10 +110,10 @@ public class MailAdresseTest {
             System.out.println("Sie sollen @ zeichen eingeben!");
         }
         if (gmail.equals("gmail.com") == false) {
-            System.out.println("Gmail Konto ist falsch! Sie sollen eine richtige Konto eingeben.");
+            System.out.println("Gmail Konto ist falsch! Sie sollen ein richtiges Konto eingeben.");
         }
         if (nameMail.equals("salih") == false) {
-            System.out.println("Name der Mail ist falsch! Sie sollen eine richtige Name eingeben.");
+            System.out.println("Name der Mail ist falsch! Sie sollen ein richtigen Name eingeben.");
         }
         if (value.contains("@") && gmail.equals("gmail.com") && nameMail.equals("salih")) {
             System.out.println("Gratuliere! Sie haben eine richtige E-Mail eingegeben.");
@@ -133,8 +127,8 @@ public class MailAdresseTest {
     @Test
     public void mailSuchenInDerTabelleTest() {
 
-        String name = "salih@tetronik.com";
-        boolean suchendeWort = true;
+        String mailName = "salih@tetronik.com";
+        boolean gesuchtesWort = true;
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
         ReusableMethods.sleep(4000);
@@ -144,18 +138,20 @@ public class MailAdresseTest {
 
         for (int i = 0; i < 1000; i++) {
             ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse);
-            if (teilnehmer.mailAdresse.getAttribute("value").contains(name)) {
-                String value = teilnehmer.mailAdresse.getAttribute("value");
-                System.out.println(i + 1 + " , " + "Value = " + value + " , das steht in der Tabelle");
-                Assert.assertEquals(value, name);
-                suchendeWort = false;
+            String valueMail = teilnehmer.mailAdresse.getAttribute("value");
+            if (valueMail.contains(mailName)) {
+                System.out.println(i + 1 + " , " + valueMail + " steht in der Tabelle.");
+               // Assert.assertEquals(value, name);
+                String valueNameOrt = teilnehmer.nameOrt.getAttribute("value");
+                System.out.println("NameOrt = " + valueNameOrt);
+                gesuchtesWort = false;
                 break;
             } else {
                 ReusableMethods.getVisibilityOfWait(teilnehmer.nextButton).click();
             }
         }
-        if (suchendeWort) {
-            System.out.println(name + " wurde nicht gefunden");
+        if (gesuchtesWort) {
+            System.out.println(mailName + " wurde nicht gefunden");
         }
     }
 
@@ -163,17 +159,6 @@ public class MailAdresseTest {
 
 
 
-
-
-    public static void main(String[] args) {
-
-        String mail ="salih@tetronik.com";
-        String[] array= mail.split("@");
-        System.out.println(array.length);
-        System.out.println(array[0]);
-        System.out.println(array[1]);
-        System.out.println(Arrays.toString(array));
-    }
 
 
 
