@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class BasiseinstellungenPage {
 
     public BasiseinstellungenPage() {
@@ -29,11 +31,14 @@ public class BasiseinstellungenPage {
     @FindBy(xpath = "(//input[@class='WICEdit ParameterEdit'])[4]")
     public WebElement maxAnzeigedauerNachAnsage;
 
-    @FindBy(xpath = "(//input[@class='WICEdit ParameterEdit'])[14]")
+    @FindBy(xpath = "(//input[@class='WICEdit ParameterEdit'])[5]")
     public WebElement maxAnzeigedauerDMC;
 
     @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[4]")
     public WebElement anzahlHochpriorProsses;
+
+    @FindAll({@FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[4]/option")})
+    public List<WebElement> anzahlHochpriorProssesOption;
 
     @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[4]/option[2]")
     public WebElement anzahlHochpriorProssesOption2;
@@ -45,11 +50,14 @@ public class BasiseinstellungenPage {
     @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[2]")
     public WebElement datumsFormat;
 
-    @FindAll({@FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[3]")})
+    @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[3]")
     public WebElement defaultSprache;
 
-    @FindAll({@FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[3]/option")})
+    @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[3]/option")
     public WebElement defaultSpracheOption;
+
+   @FindBy(xpath = "(//select[@class='WICSelect ParameterEdit'])[3]/option[1]")
+    public WebElement defaultSpracheOption1;
 
 
 
