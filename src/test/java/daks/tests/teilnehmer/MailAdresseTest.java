@@ -97,13 +97,14 @@ public class MailAdresseTest {
         ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse).clear();
-        teilnehmer.mailAdresse.sendKeys("salih@gmail.com");
+        teilnehmer.mailAdresse.sendKeys("salihh@gmail.comm");
         String value = teilnehmer.mailAdresse.getAttribute("value");
         System.out.println(value);
         int index = value.indexOf("@");
+       // System.out.println(index);
         String gmail = value.substring(index + 1);
         System.out.println(gmail);
-        String nameMail = value.substring(0, index);
+        String nameMail = value.substring(0, index); // index + 1
         System.out.println(nameMail);
 
         if (value.contains("@") == false) {
@@ -127,7 +128,7 @@ public class MailAdresseTest {
     @Test
     public void mailSuchenInDerTabelleTest() {
 
-        String mailName = "salih@tetronik.com";
+        String mailName = "salih.polat@tetronik.com";
         boolean gesuchtesWort = true;
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
@@ -136,7 +137,7 @@ public class MailAdresseTest {
         ReusableMethods.doubleClick(teilnehmer.tabelleRow1);
         ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse);
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1200; i++) {
             ReusableMethods.getVisibilityOfWait(teilnehmer.mailAdresse);
             String valueMail = teilnehmer.mailAdresse.getAttribute("value");
             if (valueMail.contains(mailName)) {
@@ -158,6 +159,34 @@ public class MailAdresseTest {
 
 
 
+    @Test
+    public void gesuchtesWortInAlleTabelle() {
+
+        String name = "yxc244";
+        boolean gesuchtesWort = true;
+
+        ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
+        ReusableMethods.sleep(4000);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.richtungstaste);
+        ReusableMethods.doubleClick(teilnehmer.tabelleRow1);
+        ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt);
+
+        for (int i = 0; i < 1000; i++) {
+            ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt);
+            String value = teilnehmer.nameOrt.getAttribute("value");
+            if (value.contains(name)) {
+                System.out.println(i + 1 + " , " + value + " steht in der Tabelle");
+                Assert.assertEquals(value, name);
+                gesuchtesWort = false;
+                break;
+            } else {
+                ReusableMethods.getVisibilityOfWait(teilnehmer.nextButton).click();
+            }
+        }
+        if (gesuchtesWort) {
+            System.out.println(name + " wurde nicht gefunden");
+        }
+    }
 
 
 

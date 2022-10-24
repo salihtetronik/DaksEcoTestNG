@@ -19,6 +19,24 @@ public class TeilnehmerPage {
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[10]")
     public WebElement teilnehmerButton;
 
+    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[2]")
+    public WebElement neuButton;
+
+    @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[1]")
+    public WebElement nameOrt;
+
+    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[1]")
+    public WebElement sichernButton;
+
+    @FindBy(xpath = "//div[@class='WICButton_TEXT WICMessageBox_ButtonYes']")
+    public WebElement jaButton;
+
+    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[3]")
+    public WebElement kopierenButton;
+
+    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[4]")
+    public WebElement loschenButton;
+
     @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[11]")
     public WebElement rundrufeButton;
 
@@ -63,7 +81,6 @@ public class TeilnehmerPage {
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[3]")})
     public List<WebElement> tabelleEndgerätetd3;
 
-
     @FindBy(xpath = "(//table)[3]//tr[1]/td[2]")
     public WebElement tabelleRufnummer1;
 
@@ -78,21 +95,6 @@ public class TeilnehmerPage {
 
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[1]")
     public WebElement bearbeitenButton;
-
-    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[2]")
-    public WebElement neuButton;
-
-    @FindBy(xpath = "//div[@class='WICButton_TEXT WICMessageBox_ButtonYes']")
-    public WebElement jaButton;
-
-    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[3]")
-    public WebElement kopierenButton;
-
-    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[4]")
-    public WebElement loschenButton;
-
-    @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[1]")
-    public WebElement nameOrt;
 
     @FindBy(xpath = "(//input[@class='WICEdit SubsValue'])[2]")
     public WebElement vornameQualifikation;
@@ -128,12 +130,12 @@ public class TeilnehmerPage {
     @FindAll({@FindBy(xpath = "(//table)[3]//tr/td[2]")})
     public List<WebElement> tabelleRundrufeBezeichnung;
 
-    @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[1]")
-    public WebElement sichernButton;
-
     @FindBy(xpath = "(//button[@class='WICButton ActionButton'])[2]")
     public WebElement abbrechenButton;
 
+
+    //bei Jenkins durchführen => "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for:
+// DefaultElementLocator 'By.xpath: //button[@title='Zum nÃ¤chsten Eintrag springen']' <= diese Problem. Wahrscheinlichn wegen der "ä" (nächsten) kann Locator nicht finden.
     @FindBy(xpath = "//button[@title='Zum nächsten Eintrag springen']")
     public WebElement nextButton;
 

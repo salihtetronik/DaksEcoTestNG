@@ -25,14 +25,14 @@ public class TeilnehmerNameTest {
     public void teilnehmerNameSpeichernTest1() {
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(3000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
-        teilnehmer.nameOrt.sendKeys("yxcvbnmasdfghfklouqwertzueopa2"); //String length = 30
+        teilnehmer.nameOrt.sendKeys("yxcvbnmasdfghfklouqwertzueopa8"); //String length = 30
         String value = teilnehmer.nameOrt.getAttribute("value");
         System.out.println("value= " + value);
         System.out.println("String length= " + value.length());
-        Assert.assertEquals(value, "yxcvbnmasdfghfklouqwertzueopa2");
+        Assert.assertEquals(value, "yxcvbnmasdfghfklouqwertzueopa8");
         ReusableMethods.getVisibilityOfWait(teilnehmer.sichernButton).click();
         //  Erwartetes  Ergebnis ist True(neuButton soll erscheinen), Aktueles Ergebnis  auch True. Test ist Erfolgreich
         Assert.assertTrue(teilnehmer.neuButton.isDisplayed());
@@ -44,7 +44,7 @@ public class TeilnehmerNameTest {
     public void teilnehmerNameSpeichernTest2() {
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(3000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("QWERTZUIOPÜASDFGHJKLÖÄYXCVBNM123456"); // String length = 35
@@ -85,7 +85,7 @@ public class TeilnehmerNameTest {
     public void teilnehmerNameSpeichernTest4() {
 
         ReusableMethods.getVisibilityOfWait(teilnehmer.teilnehmerButton).click();
-        ReusableMethods.sleep(3000);
+        ReusableMethods.sleep(4000);
         ReusableMethods.getVisibilityOfWait(teilnehmer.neuButton).click();
         ReusableMethods.getVisibilityOfWait(teilnehmer.nameOrt).clear();
         teilnehmer.nameOrt.sendKeys("");

@@ -25,6 +25,8 @@ public class ReusableMethods {
 
         Driver.getDriver().get("http://127.0.0.1");
 
+        //Driver.getDriver().manage().window().maximize();
+
         if(ReusableMethods.isAlertReady()){
 
             Driver.getDriver().switchTo().alert().accept();
@@ -34,7 +36,7 @@ public class ReusableMethods {
 
         LoginPage login = new LoginPage();
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait = new WebDriverWait(Driver.getDriver(), 20);
 
 
         login.userName.sendKeys("sysadm");
@@ -83,7 +85,7 @@ public class ReusableMethods {
             }
         };
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
+            wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
             wait.until(expectation);
         } catch (Exception error) {
             error.printStackTrace();
@@ -157,7 +159,7 @@ public class ReusableMethods {
     public static WebElement getVisibilityOfWait(WebElement element){
 
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        wait = new WebDriverWait(Driver.getDriver(),10);
         wait.until(ExpectedConditions.visibilityOf(element));
 
         return element;

@@ -37,23 +37,6 @@ public class LoginPage {
     public WebElement errorMesage;
 
 
-    public static void main(String[] args) {
-
-        ArrayList isimler=new ArrayList();
-
-        isimler.add("Salih");
-        isimler.add("ali");
-        isimler.add("veli");
-        isimler.add("deli");
-
-        System.out.println(isimler);
-
-
-
-
-
-
-    }
 
 
 }

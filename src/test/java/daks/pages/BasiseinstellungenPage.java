@@ -15,7 +15,7 @@ public class BasiseinstellungenPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "(//td[@align='left'])[2]")
+    @FindBy(xpath = "(//button[@name='MENU_BUTTON'])[2]")
     public WebElement basisButton;
 
     // Seite Allgemeins;

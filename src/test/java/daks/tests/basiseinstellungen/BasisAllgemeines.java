@@ -86,7 +86,7 @@ public class BasisAllgemeines {
     }
 
 
-    @Test // Bu sekilde dogru bir test sonucu alinamaz. Optionlarda zaten 2 degeri var ve burda da 2 degeri ile karsilastirilmis, her durumda zeten dogru sonucu verecektir.
+    @Test
     public void allgemeinsRundrufeAnzahlHochpriorerProzesse() {
 
         ReusableMethods.getVisibilityOfWait(basis.anzahlHochpriorProsses);
@@ -106,7 +106,7 @@ public class BasisAllgemeines {
     public void allgemeinsRundrufeAnzahlHochpriorerProzesse1() {
 
         ReusableMethods.getVisibilityOfWait(basis.anzahlHochpriorProsses);
-        System.out.println(basis.anzahlHochpriorProsses.getText()); // Bu sekilde de tum optionlari veriyor ve yanlis sonuc vermis oluyor.
+        System.out.println(basis.anzahlHochpriorProsses.getText());
         String gesuchtesWort= "2";
 
         if (basis.anzahlHochpriorProsses.getText().equals(gesuchtesWort)) {
